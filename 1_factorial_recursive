@@ -1,0 +1,21 @@
+//write a recursive implementation of factorial function, n!= 1*2*3*....*n
+____________________________________________________________________________________
+
+#include<bits/stdc++.h>
+using namespace std;
+int fact(int n){
+    if(n==0){
+        return 1;
+    }
+    else{
+        return n*fact(n-1);
+    }
+}
+int main(){
+    int n;
+    cin>>n;
+    printf("The factorial of number %d is %d ", n, fact(n));
+
+
+ return 0;
+}
