@@ -1,0 +1,24 @@
+//recursive program to find the sum of the elements 
+input: n
+output: 1+2+3+...........+n
+      =1+2+3+......+(n-1)+ n
+      = sumOfInt(n-1) + n
+______________________________________________________________
+#include<bits/stdc++.h>
+#include <iostream>
+using namespace std;
+int sumOfInt(int n){
+    if(n==1){
+        return 1;
+    }
+    else{
+        return sumOfInt(n-1)+n;
+    }
+}
+int main(){
+    int n;
+    cin>>n;
+    printf("sum of total numbers %d", sumOfInt(n));
+
+return 0;
+}
