@@ -1,0 +1,29 @@
+input: 6 5 4 3 2 1
+output: 1 2 3 4 5 6 
+
+first print (n%10) = for the right most(last) digit
+then return reverse (n/10) = for decreasing 1 value which was printed and 
+                             do the same process again to print the next
+                             right most(last) digit.
+----------------------------------------------------------------------------------
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+
+int reversed(int n){
+    if(n==0){
+        return 0;
+    }
+    else{
+        printf("%d",n%10);
+        return reversed(n/10);
+    }
+}
+int main(){
+    int n= 654321;
+    printf("The reversed value of the number %d is ",n);
+    reversed(n);
+    return 0;
+}
+
+
