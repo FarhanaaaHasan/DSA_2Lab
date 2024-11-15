@@ -1,0 +1,37 @@
+input: x,y
+output: x^y
+
+------------------------------------------------------------------------------------
+#include<bits/stdc++.h>
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int power(int x,int y){
+    if(y==0){
+      return 1;
+    }
+
+    else{
+
+    return x*power(x, y-1);
+    }
+}
+
+int main(){
+    int x,y;
+    cin>>x;
+    cin>>y;
+
+    printf("The final number is ");
+
+    printf("%d", power(x,y));
+
+    return 0;
+
+
+}
+
+
+
+
