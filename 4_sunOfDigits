@@ -1,0 +1,25 @@
+input: 5 3 2 1
+output: 11
+sumOfDigit(5 3 2 1 )= 5+3+2+1
+                    =sumOfDigit(5 3 2 ) + 1 
+                    = ---(n/10)------ +  (n%10)
+ sumOfDigit(n)= sumOfDigit(n/10) + (n%10)
+ -----------------------------------------------------------------------------
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+int sumOfDigit(int n){
+    if(n==0){
+        return 0;
+    }
+    else{
+        return sumOfDigit(n/10)+ (n%10);
+    }
+}
+
+int main(){
+    int n= 5321;
+    printf("Total sum of all digits is %d", sumOfDigit(n));
+
+    return 0;
+}
