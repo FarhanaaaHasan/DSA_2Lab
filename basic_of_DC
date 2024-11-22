@@ -1,0 +1,24 @@
+Divide & Conquer:
+--------------------
+** 🧩Divide- change only in size (smaller) -> (base case) It will stop in constant size.
+** small problem will be treated as new problem, then managable problem
+  
+   D I V I D E
+       ↓
+  [Problem Splits]
+  ↙           ↘
+CONQUER      CONQUER⚔️
+   ↓            ↓
+[Combine Solutions]
+       ↓
+     OUTPUT
+
+*  combine all small solutions
+*  then all combine -> main solution
+
+
+
+
+
+
+
