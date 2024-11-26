@@ -1,0 +1,40 @@
+//give the total sum of all values of an array using dc(divide and conquer)
+                            🍀~🍊
+                            
+#include<bits/stdc++.h>
+using namespace std;
+
+int countNum(int Arr[], int i, int j){
+    int sum=0;
+    if(i==j){
+            sum=sum+ Arr[i];
+        return sum;
+    }
+    else{
+    int mid=(i+j)/2;
+    int c1= countNum(Arr, i, mid);
+    int c2= countNum(Arr,mid+1,j);
+
+    return sum=sum+c1+c2;
+}
+
+}
+
+int main(){
+   int x;
+   printf("Enter the numbers ");
+
+   cin>>x;
+
+   int Arr[x];
+   for(int i=0; i<x; i++)
+   {
+
+       cin>>Arr[i];
+   }
+   int sum_all=countNum(Arr, 0,x-1);
+   printf("the numbers ");
+   cout<<sum_all;
+
+}
+
