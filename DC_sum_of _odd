@@ -1,0 +1,44 @@
+//A array will be povided by the user, and then u have to count the total sum of all odd numbers of the array !
+                            ╱|、
+                          (˚ˎ 。7  
+                           |、˜〵          
+                          じしˍ,)ノ  ♡
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int countOdd(int Arr[], int i, int j){
+    int sum=0;
+    if(i==j){
+        if(Arr[i]%2!=0)
+            return Arr[i];
+        else return 0;
+    }
+    else{
+    int mid=(i+j)/2;
+    int c1= countOdd(Arr, i, mid);
+    int c2= countOdd(Arr,mid+1,j);
+
+    return sum=sum+c1+c2;
+}
+
+}
+
+int main(){
+   int x;
+   printf("Enter the numbers:  ");
+
+   cin>>x;
+
+   int Arr[x];
+   for(int i=0; i<x; i++)
+   {
+
+       cin>>Arr[i];
+   }
+   int sum_odd=countOdd(Arr, 0,x-1);
+   printf("the numbers ");
+   cout<<sum_odd;
+
+}
