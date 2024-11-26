@@ -1,0 +1,41 @@
+// this code will check how many even numbers u have in the array
+
+                        🌷͙֒🧸🫧🩷⋆˙⟡♡
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int countEven (int Arr[], int i, int j){
+    if(i==j){
+        if(Arr[i]%2==0)
+            return 1;
+        else return 0;
+    }
+    else{
+    int mid=(i+j)/2;
+    int c1= countEven(Arr, i, mid);
+    int c2= countEven(Arr,mid+1,j);
+
+    return c1+c2;
+}
+
+}
+
+int main(){
+   int x;
+   printf("Enter the numbers");
+
+   cin>>x;
+
+   int Arr[x];
+   for(int i=0; i<x; i++)
+   {
+
+       cin>>Arr[i];
+   }
+   int even=countEven(Arr, 0,x-1);
+   printf("Total even number = ");
+   cout<<even;
+
+}
