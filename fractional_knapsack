@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+struct Item {
+    int id;
+    int w,v;
+};
+
+bool comp(Item i1, Item i2) {
+    return i1.v*1.0 /i1.w >  i2.v*1.0 /i2.w ;
+}
+
+double fractional_Knapsack(vector<Item> items, int w) {
+    sort(items.begin(),items.end(),comp);
+    // for(int i=0; i<items.size();i++{
+    //printf("item %d: %d kg %d taka\n", items[i].id, items[i].w, items[i].v);
+    //}
+    double cap_left=w;
+    double profit= 0;
+    for(int i=0; i<items.size();i++){
+        if(cap_left<=0) break;
+        int vi= items [i].v, wi= items[i].w;
+        double fraction = min (1.0, cap_left/wi);
+        cap_left-=fraction*wi;
+        profit+= fraction *vi;
+        if(fraction>0){
+            printf("item %d: %.1f kg %.1f taka\n", items[i].id, fraction*wi, fraction*vi);
+        }
+    }
+    return profit;
+}
+int main(){
+
+  int n, w,v;
+  cin>>n;
+  vector<Item> items;
+  for(int i=0; i<n; i++){
+    cin>>w>>v;
+    items.push_back({i+1, w,v});
+  }
+  cin>> w;
+  double profit= fractional_Knapsack(items,w);
+  cout<< "profit: "<< profit<< "taka"<< endl;
+
+}
+
+
+
+
